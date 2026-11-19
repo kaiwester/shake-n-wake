@@ -1,22 +1,22 @@
-# Shake-n-Wake – welche Taste macht was?
+# Shake-n-Wake – What Does Each Button Do?
 
-Interaktive Kurzanleitung (DE/EN) für den kleinen Shake-n-Wake Vibrationswecker (Modell PI-107, eine AAA-Batterie).
-Wähle eine Funktion – die zu drückenden Tasten werden am Gerät hervorgehoben, inklusive Reihenfolge.
+Interactive quick guide (DE/EN) for the small Shake-n-Wake vibrating alarm clock (Model PI-107, one AAA battery).
+Select a function—the buttons you need to press will be highlighted on the device, along with the order.
 
-Inoffiziell, nicht vom Hersteller.
+Unofficial; not from the manufacturer.
 
-## Struktur
+## Structure
 
 ```
-index.html     Markup + SVG des Weckers
+index.html     Markup + SVG of the alarm clock
 css/style.css  Styles (Light/Dark, reduced motion)
-js/app.js      Texte (DE/EN), Tastenzuordnung, Rendering
-fonts/         Self-hosted Fonts (Atkinson Hyperlegible, Share Tech Mono; SIL OFL 1.1)
+js/app.js      Text (DE/EN), button mapping, rendering
+fonts/         Self-hosted fonts (Atkinson Hyperlegible, Share Tech Mono; SIL OFL 1.1)
 ```
 
-Kein Build-Schritt – reine statische Dateien, keine externen Requests (Fonts liegen lokal).
+No build step—purely static files, no external requests (fonts are stored locally).
 
-## Lokal starten
+## Run locally
 
 ```sh
 python3 -m http.server 8000
