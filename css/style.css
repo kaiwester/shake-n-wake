@@ -1,0 +1,65 @@
+/* Self-hosted fonts (SIL OFL 1.1, see fonts/OFL-*.txt) – via Fontsource, latin subset */
+@font-face{font-family:"Atkinson Hyperlegible";font-style:normal;font-weight:400;font-display:swap;src:url("../fonts/atkinson-hyperlegible-latin-400-normal.woff2") format("woff2")}
+@font-face{font-family:"Atkinson Hyperlegible";font-style:normal;font-weight:700;font-display:swap;src:url("../fonts/atkinson-hyperlegible-latin-700-normal.woff2") format("woff2")}
+@font-face{font-family:"Share Tech Mono";font-style:normal;font-weight:400;font-display:swap;src:url("../fonts/share-tech-mono-latin-400-normal.woff2") format("woff2")}
+
+:root{
+  --bg:#ECEAF2; --ink:#221F2E; --muted:#5D5970; --line:#CFCBDC;
+  --plastic:#FBFAFD; --plastic-edge:#BDB8CC; --key:#E4E1EC;
+  --orange:#F28C38; --orange-ink:#3A1F06; --orange-soft:#FCE3CC;
+  --lcd:#C7CDBA; --lcd-lit:#B6E3D4; --lcd-ink:#20261C;
+  color-scheme:light;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root{
+    --bg:#1B1926; --ink:#ECEAF4; --muted:#ABA6BF; --line:#3A3650;
+    --plastic:#2C2A3A; --plastic-edge:#4C4864; --key:#3A374C;
+    --orange-soft:#4A2E17; --lcd:#9FA693; --lcd-lit:#8FCDB9;
+    color-scheme:dark;
+  }
+}
+*,*::before,*::after{box-sizing:inherit}
+html{height:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.6 "Atkinson Hyperlegible",system-ui,-apple-system,"Segoe UI",sans-serif}
+.wrap{max-width:1040px;margin:0 auto;padding:28px 20px 48px}
+header{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;margin-bottom:24px}
+h1{font-size:clamp(28px,5vw,42px);line-height:1.1;margin:0 0 8px;font-weight:700;letter-spacing:-.01em}
+.lede{margin:0;color:var(--muted);max-width:56ch}
+.lang{display:flex;border:1.5px solid var(--line);border-radius:999px;overflow:hidden;flex-shrink:0}
+.lang button{font:inherit;font-size:14px;background:none;border:0;color:var(--muted);padding:6px 12px;cursor:pointer}
+.lang button[aria-pressed="true"]{background:var(--ink);color:var(--bg)}
+.grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:32px;align-items:start}
+@media (max-width:760px){.grid{grid-template-columns:minmax(0,1fr)}}
+.device{position:sticky;top:calc(16px + env(safe-area-inset-top,0px))}
+@media (max-width:760px){.device{position:static}}
+svg{width:100%;height:auto;display:block;max-width:440px;margin:0 auto}
+.key{fill:var(--key);stroke:var(--plastic-edge);stroke-width:1.5;transition:fill .2s}
+.key.hl{fill:var(--orange);stroke:var(--orange-ink)}
+.klabel{font-family:"Atkinson Hyperlegible",sans-serif;font-size:13px;fill:var(--muted)}
+.klabel.hl{fill:var(--ink);font-weight:700}
+.badge{opacity:0;transition:opacity .2s}
+.badge.show{opacity:1}
+.lcdbg{fill:var(--lcd);transition:fill .3s}
+.lcdbg.lit{fill:var(--lcd-lit)}
+.lcdtxt{font-family:"Share Tech Mono",ui-monospace,monospace;fill:var(--lcd-ink)}
+.blink{animation:blink 1s steps(2,start) infinite}
+@keyframes blink{to{visibility:hidden}}
+@media (prefers-reduced-motion:reduce){.blink{animation:none}.key,.badge,.lcdbg{transition:none}}
+nav{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px}
+nav a{font-size:15px;text-decoration:none;color:var(--ink);border:1.5px solid var(--line);border-radius:999px;padding:7px 14px;background:var(--plastic)}
+nav a:hover{border-color:var(--muted)}
+nav a[aria-current="true"]{background:var(--orange);border-color:var(--orange);color:var(--orange-ink);font-weight:700}
+a:focus-visible,button:focus-visible{outline:3px solid var(--orange);outline-offset:2px}
+.panel{background:var(--plastic);border:1.5px solid var(--line);border-radius:14px;padding:20px 22px}
+.panel h2{margin:0 0 12px;font-size:22px;line-height:1.25}
+ol{margin:0;padding:0;list-style:none;counter-reset:s}
+ol li{counter-increment:s;position:relative;padding:0 0 12px 40px}
+ol li::before{content:counter(s);position:absolute;left:0;top:0;width:28px;height:28px;border-radius:50%;background:var(--orange);color:var(--orange-ink);font-weight:700;font-size:15px;display:flex;align-items:center;justify-content:center}
+ol.plain li::before{content:"•";background:none;color:var(--muted);font-size:22px;top:-4px}
+.note{margin:4px 0 0;font-size:15px;color:var(--muted)}
+.tip{margin-top:20px;padding:14px 18px;border-left:4px solid var(--orange);background:var(--orange-soft);border-radius:0}
+.tip p{margin:0;font-size:15px}
+footer{margin-top:40px;font-size:14px;color:var(--muted);max-width:70ch}

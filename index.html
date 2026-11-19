@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Shake-n-Wake Vibrationswecker – Tasten erklärt</title>
+<meta name="description" content="Interaktive Kurzanleitung für den kleinen Shake-n-Wake Vibrationswecker mit AAA-Batterie: Uhrzeit, Weckzeit, Stoppuhr, Stundensignal, Licht.">
+<meta name="theme-color" content="#ECEAF2" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#1B1926" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⏰</text></svg>">
+<link rel="preload" href="fonts/atkinson-hyperlegible-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="css/style.css">
+<script src="js/app.js" defer></script>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <div>
+    <h1 id="h1">Shake-n-Wake: welche Taste macht was?</h1>
+    <p class="lede" id="lede">Für den kleinen Vibrationswecker mit einer AAA-Batterie. Wähle eine Funktion – die Tasten zum Drücken leuchten orange, die Zahlen zeigen die Reihenfolge.</p>
+  </div>
+  <div class="lang" role="group" aria-label="Sprache / Language">
+    <button type="button" data-lang="de" aria-pressed="true">DE</button>
+    <button type="button" data-lang="en" aria-pressed="false">EN</button>
+  </div>
+</header>
+
+<div class="grid">
+  <div class="device">
+    <svg viewBox="0 0 380 330" role="img" aria-labelledby="svgt">
+      <title id="svgt">Wecker von oben mit markierten Tasten</title>
+      <rect id="k-set" class="key" x="58" y="78" width="14" height="46" rx="4"/>
+      <rect id="k-light" class="key" x="58" y="196" width="14" height="46" rx="4"/>
+      <rect id="k-adj" class="key" x="308" y="78" width="14" height="46" rx="4"/>
+      <rect id="k-mode" class="key" x="308" y="196" width="14" height="46" rx="4"/>
+      <rect id="k-slide" class="key" x="155" y="282" width="70" height="16" rx="4"/>
+      <rect x="68" y="22" width="244" height="266" rx="22" fill="var(--plastic)" stroke="var(--plastic-edge)" stroke-width="2"/>
+      <rect id="lcd" class="lcdbg" x="112" y="104" width="156" height="104" rx="6" stroke="var(--plastic-edge)" stroke-width="1.5"/>
+      <text id="lcd-top" class="lcdtxt" x="190" y="128" text-anchor="middle" font-size="15"></text>
+      <text id="lcd-main" class="lcdtxt" x="190" y="176" text-anchor="middle" font-size="38"></text>
+      <text id="lcd-sub" class="lcdtxt" x="190" y="198" text-anchor="middle" font-size="13"></text>
+      <text id="l-set1" class="klabel" x="82" y="92">Reset</text>
+      <text id="l-set2" class="klabel" x="82" y="110">Time Set</text>
+      <text id="l-light" class="klabel" x="82" y="224">💡</text>
+      <text id="l-adj1" class="klabel" x="298" y="84" text-anchor="end">Start/Stop</text>
+      <text id="l-adj2" class="klabel" x="298" y="100" text-anchor="end">Adjust</text>
+      <text id="l-mode" class="klabel" x="298" y="224" text-anchor="end">Mode</text>
+      <text id="l-slide" class="klabel" x="190" y="272" text-anchor="middle"></text>
+      <g id="b-set" class="badge"><rect x="2" y="86" width="52" height="30" rx="15" fill="var(--orange)"/><text x="28" y="106" text-anchor="middle" font-size="15" font-weight="700" fill="var(--orange-ink)"></text></g>
+      <g id="b-light" class="badge"><rect x="2" y="204" width="52" height="30" rx="15" fill="var(--orange)"/><text x="28" y="224" text-anchor="middle" font-size="15" font-weight="700" fill="var(--orange-ink)"></text></g>
+      <g id="b-adj" class="badge"><rect x="326" y="86" width="52" height="30" rx="15" fill="var(--orange)"/><text x="352" y="106" text-anchor="middle" font-size="15" font-weight="700" fill="var(--orange-ink)"></text></g>
+      <g id="b-mode" class="badge"><rect x="326" y="204" width="52" height="30" rx="15" fill="var(--orange)"/><text x="352" y="224" text-anchor="middle" font-size="15" font-weight="700" fill="var(--orange-ink)"></text></g>
+      <g id="b-slide" class="badge"><rect x="232" y="300" width="60" height="28" rx="14" fill="var(--orange)"/><text x="262" y="319" text-anchor="middle" font-size="15" font-weight="700" fill="var(--orange-ink)">◂ ▸</text></g>
+    </svg>
+  </div>
+
+  <div>
+    <nav id="nav" aria-label="Funktionen"></nav>
+    <section class="panel" aria-live="polite">
+      <h2 id="ttl"></h2>
+      <ol id="steps"></ol>
+      <p class="note" id="note"></p>
+    </section>
+    <div class="tip"><p id="tip"></p></div>
+  </div>
+</div>
+
+<noscript><p>Diese Seite benötigt JavaScript. / This page needs JavaScript.</p></noscript>
+
+<footer><p id="foot"></p></footer>
+</div>
+
+</body>
+</html>
