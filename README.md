@@ -7,17 +7,6 @@ Select a function—the buttons you need to press will be highlighted on the dev
 
 Unofficial; not from the manufacturer. Based on the [Tech Tools PI-107 instruction manual](https://manuals.plus/tech-tools/tech-tools-pi-107-silent-vibrating-alarm-clock-instruction-manual).
 
-## Structure
-
-```
-index.html     Markup + SVG of the alarm clock
-css/style.css  Styles (Light/Dark, reduced motion)
-js/app.js      Text (DE/EN), button mapping, rendering
-fonts/         Self-hosted fonts (Atkinson Hyperlegible, Share Tech Mono; SIL OFL 1.1)
-LICENSE        MIT (fonts: SIL OFL 1.1, see fonts/)
-```
-
-No build step—purely static files, no external requests (fonts are stored locally).
 
 ## Run locally
 
@@ -25,10 +14,6 @@ No build step—purely static files, no external requests (fonts are stored loca
 python3 -m http.server 8000
 # http://localhost:8000
 ```
-
-## Hosting (GitHub Pages)
-
-Settings → Pages → *Deploy from a branch* → `main` / `/ (root)`.
 
 ## Contributing
 
