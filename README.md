@@ -5,7 +5,7 @@ Select a function—the buttons you need to press will be highlighted on the dev
 
 **Live:** https://kaiwester.github.io/shake-n-wake/
 
-Unofficial; not from the manufacturer.
+Unofficial; not from the manufacturer. Based on the [Tech Tools PI-107 instruction manual](https://manuals.plus/tech-tools/tech-tools-pi-107-silent-vibrating-alarm-clock-instruction-manual).
 
 ## Structure
 

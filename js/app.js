@@ -8,21 +8,21 @@ const T = {
     groups: {tonight:"Heute Abend", buzz:"Wenn er weckt", later:"Ab und zu"},
     svg: "Wecker von oben mit markierten Tasten",
     tip: "Wecker reagiert seltsam? Batterie herausnehmen, ein paar Minuten warten, wieder einlegen. Er startet neu in der Uhrzeit-Anzeige – danach Uhrzeit und Weckzeit neu einstellen und den Wecker wieder einschalten.",
-    foot: "Inoffizielle Kurzanleitung, nicht vom Hersteller. Zusammengefasst aus der Original-Anleitung des Tech Tools Shake-n-Wake (Modell PI-107).",
+    foot: "Inoffizielle Kurzanleitung, nicht vom Hersteller. Zusammengefasst aus der",
+    footLink: "Original-Anleitung des Tech Tools Shake-n-Wake (Modell PI-107)",
     legend: "Zwei Namen an einer Taste = eine Taste. Fett ist der Name, den der Schritt meint.",
     f: {
-      zeit: {n:"Uhrzeit und Datum", s:["Mode 3× drücken – der Einstellmodus startet.","Adjust ändert den blinkenden Wert.","Time Set springt zum nächsten Feld: Sekunden → Minuten → Stunden → Tag → Monat → Wochentag.","Mode drücken – fertig."], note:"12 oder 24 Stunden: Bei den Stunden mit Adjust weiterdrücken, bis das gewünschte Format erscheint."},
-      alarm: {n:"Weckzeit einstellen", s:["Mode 2× drücken – die Weck-Stunde blinkt.","Adjust ändert die Stunde.","Time Set wechselt zu den Minuten, wieder mit Adjust ändern.","Mode drücken – fertig."], note:"Der Wecker klingelt jeden Tag. Den blinkenden Wochentag beim Einstellen einfach ignorieren."},
-      an: {n:"Wecker an oder aus", s:["Time Set und Adjust gleichzeitig drücken.","Alarm-Symbol im Display = an. Kein Symbol = aus."], note:""},
+      zeit: {n:"Uhrzeit und Datum", s:["In der Uhrzeit-Anzeige Mode 3× drücken – die Sekunden blinken.","Adjust ändert den blinkenden Wert (Sekunden: zurück auf 00).","Time Set springt zum nächsten Feld: Sekunden → Minuten → Stunden → Tag → Monat → Wochentag.","Mode drücken – fertig."], note:"12 oder 24 Stunden: Bei den Stunden mit Adjust weiterdrücken, bis das gewünschte Format erscheint."},
+      alarm: {n:"Weckzeit einstellen", s:["In der Uhrzeit-Anzeige Mode 2× drücken – die Weck-Stunde blinkt.","Adjust ändert die Stunde.","Time Set wechselt zu den Minuten, wieder mit Adjust ändern.","Mode drücken – fertig."], note:"Der Wecker klingelt jeden Tag. Den blinkenden Wochentag beim Einstellen einfach ignorieren."},
+      an: {n:"Wecker an oder aus", s:["In der Uhrzeit-Anzeige Time Set und Adjust gleichzeitig drücken.","Alarm-Symbol im Display = an. Kein Symbol = aus."], note:""},
       zeig: {n:"Weckzeit anzeigen", s:["Reset drücken – das Display zeigt die eingestellte Weckzeit."], note:""},
       snooze: {n:"Schlummern", s:["Wenn er weckt: Start/Stop drücken – 5 Minuten Ruhe."], note:"Zum Beenden für heute eine andere Taste drücken (siehe „Wecken beenden“). Achtung: „Wecker aus“ (Time Set + Adjust) schaltet ihn auch für morgen aus."},
       beenden: {n:"Wecken beenden", s:["Wenn er weckt: Mode, Reset oder die Lampen-Taste drücken – Ruhe bis morgen."], note:"Start/Stop beendet das Wecken nicht, sondern schlummert nur 5 Minuten. Der Wecker bleibt an und weckt morgen wieder."},
-      stopp: {n:"Stoppuhr", s:["Mode 1× drücken – Stoppuhr-Modus.","Start/Stop startet und stoppt.","Reset setzt auf 00:00 zurück.","Mode drücken – zurück zur Uhrzeit."], note:""},
+      stopp: {n:"Stoppuhr", s:["In der Uhrzeit-Anzeige Mode 1× drücken – Stoppuhr-Modus.","Start/Stop startet und stoppt.","Reset setzt auf 00:00 zurück.","Mode drücken – zurück zur Uhrzeit."], note:""},
       stunde: {n:"Signal zur vollen Stunde", s:["Time Set gedrückt halten.","Dazu Mode drücken. Alle Wochentage sichtbar = an, verschwunden = aus."], note:""},
       licht: {n:"Licht", s:["Lampen-Taste drücken – das Display leuchtet kurz."], note:""},
       vib: {n:"Vibration oder Ton", s:["Orangefarbener Schieber an der Unterkante: links = lautlose Vibration, rechts = Piepton."], note:"Tipp: Unters Kopfkissen legen oder mit dem Armband ums Handgelenk tragen."}
     },
-    lcdSet:"EINST.", lcdAl:"WECKEN", lcdSw:"STOPPUHR", lcdSn:"SCHLUMMERN",
     hold:"halten", or:"oder", both:"beide"
   },
   en: {
@@ -34,21 +34,21 @@ const T = {
     groups: {tonight:"Tonight", buzz:"When it buzzes", later:"Now and then"},
     svg: "Top view of the clock with highlighted buttons",
     tip: "Clock acting up? Take the battery out, wait a few minutes, put it back. It restarts in time mode – then set the time and alarm again and switch the alarm back on.",
-    foot: "Unofficial quick guide, not from the manufacturer. Summarised from the original Tech Tools Shake-n-Wake (model PI-107) instructions.",
+    foot: "Unofficial quick guide, not from the manufacturer. Summarised from the",
+    footLink: "original Tech Tools Shake-n-Wake (model PI-107) instructions",
     legend: "Two names on one button = one button. Bold is the name the step means.",
     f: {
-      zeit: {n:"Time and date", s:["Press Mode 3× – setting mode starts.","Adjust changes the flashing value.","Time Set jumps to the next field: seconds → minutes → hours → day → month → weekday.","Press Mode – done."], note:"12 or 24 hours: while on the hours, keep pressing Adjust until the format you want appears."},
-      alarm: {n:"Set the alarm time", s:["Press Mode 2× – the alarm hour flashes.","Adjust changes the hour.","Time Set moves to the minutes, change them with Adjust.","Press Mode – done."], note:"The alarm goes off every day. Ignore the flashing weekday while setting it."},
-      an: {n:"Alarm on or off", s:["Press Time Set and Adjust together.","Alarm symbol on the display = on. No symbol = off."], note:""},
+      zeit: {n:"Time and date", s:["In time mode, press Mode 3× – the seconds flash.","Adjust changes the flashing value (seconds: back to 00).","Time Set jumps to the next field: seconds → minutes → hours → day → month → weekday.","Press Mode – done."], note:"12 or 24 hours: while on the hours, keep pressing Adjust until the format you want appears."},
+      alarm: {n:"Set the alarm time", s:["In time mode, press Mode 2× – the alarm hour flashes.","Adjust changes the hour.","Time Set moves to the minutes, change them with Adjust.","Press Mode – done."], note:"The alarm goes off every day. Ignore the flashing weekday while setting it."},
+      an: {n:"Alarm on or off", s:["In time mode, press Time Set and Adjust together.","Alarm symbol on the display = on. No symbol = off."], note:""},
       zeig: {n:"Show alarm time", s:["Press Reset – the display shows the alarm time."], note:""},
       snooze: {n:"Snooze", s:["When it goes off: press Start/Stop – 5 minutes of quiet."], note:"To stop it for today, press another button (see “Stop the alarm”). Careful: “Alarm off” (Time Set + Adjust) also switches it off for tomorrow."},
       beenden: {n:"Stop the alarm", s:["When it goes off: press Mode, Reset or the light button – quiet until tomorrow."], note:"Start/Stop doesn’t end the alarm, it only snoozes for 5 minutes. The alarm stays on and goes off again tomorrow."},
-      stopp: {n:"Stopwatch", s:["Press Mode 1× – stopwatch mode.","Start/Stop starts and stops.","Reset sets it back to 00:00.","Press Mode – back to the time."], note:""},
+      stopp: {n:"Stopwatch", s:["In time mode, press Mode 1× – stopwatch mode.","Start/Stop starts and stops.","Reset sets it back to 00:00.","Press Mode – back to the time."], note:""},
       stunde: {n:"Hourly chime", s:["Hold Time Set.","Press Mode as well. All weekdays shown = on, gone = off."], note:""},
       licht: {n:"Light", s:["Press the light button – the display lights up briefly."], note:""},
       vib: {n:"Vibrate or beep", s:["Orange slider on the bottom edge: left = silent vibration, right = beep."], note:"Tip: put it under your pillow or wear it on the wrist strap."}
     },
-    lcdSet:"SET", lcdAl:"ALARM", lcdSw:"STOPWATCH", lcdSn:"SNOOZE",
     hold:"hold", or:"or", both:"both"
   }
 };
@@ -98,26 +98,35 @@ function brand(el, str){
   }));
 }
 
-// LCD mock. Main line is built from [text, blinks?] parts so only the field
-// the steps talk about blinks (seconds when setting the time, the hour for the alarm).
+// LCD mock, following the PI-107 manual: the display has no words. The weekday
+// letters double as mode indicators (TU blinks while setting the time, MO while
+// setting the alarm, SU/FR/SA in the stopwatch, all letters = hourly chime on),
+// plus an "alarm on" symbol. Main line parts are [text, blinks?].
+const DAYS = ["SU","MO","TU","WE","TH","FR","SA"];
+const SVGNS = "http://www.w3.org/2000/svg";
 function lcd(){
-  const t = T[lang], top=$("lcd-top"), main=$("lcd-main"), sub=$("lcd-sub");
+  const top=$("lcd-top"), main=$("lcd-main"), sub=$("lcd-sub");
   sub.classList.remove("blink"); $("lcd").classList.remove("lit");
-  let a="", b=[[now()]], c="";
-  if (cur==="zeit"){ a=t.lcdSet; b=[["12:00"]]; c="00"; sub.classList.add("blink"); }
-  else if (cur==="alarm"){ a=t.lcdAl; b=[["6",true],[":30"]]; }
-  else if (cur==="an"){ a="((•))"; }
-  else if (cur==="zeig"){ a=t.lcdAl; b=[["6:30"]]; }
-  else if (cur==="snooze"){ a=t.lcdSn; b=[["Zz"]]; }
-  else if (cur==="stopp"){ a=t.lcdSw; b=[["0:00"]]; c="00"; }
-  else if (cur==="stunde"){ a="SU MO TU WE TH FR SA"; }
+  let days=null, blinkDays=[], b=[[now()]], c="", bell=false;
+  if (cur==="zeit"){ days=DAYS; blinkDays=["TU"]; b=[["12:00"]]; c="00"; sub.classList.add("blink"); }
+  else if (cur==="alarm"){ days=DAYS; blinkDays=["MO"]; b=[["6",true],[":30"]]; }
+  else if (cur==="an"){ bell=true; }
+  else if (cur==="zeig"){ b=[["6:30"]]; bell=true; }
+  else if (cur==="snooze" || cur==="beenden"){ bell=true; }
+  else if (cur==="stopp"){ days=DAYS; blinkDays=["SU","FR","SA"]; b=[["0:00"]]; c="00"; }
+  else if (cur==="stunde"){ days=DAYS; }
   else if (cur==="licht"){ $("lcd").classList.add("lit"); }
-  top.textContent=a; sub.textContent=c;
+  top.replaceChildren(...(days||[]).flatMap((d,i)=>{
+    const ts = document.createElementNS(SVGNS,"tspan");
+    ts.textContent = d; if (blinkDays.includes(d)) ts.classList.add("blink");
+    return i ? [" ", ts] : [ts];
+  }));
+  $("lcd-bell").style.visibility = bell ? "visible" : "hidden";
+  sub.textContent=c;
   main.replaceChildren(...b.map(([txt, blink])=>{
-    const ts = document.createElementNS("http://www.w3.org/2000/svg","tspan");
+    const ts = document.createElementNS(SVGNS,"tspan");
     ts.textContent = txt; if (blink) ts.classList.add("blink"); return ts;
   }));
-  top.setAttribute("font-size", a.length>12 ? "11" : "15");
 }
 
 // Badge: step number(s) on line 1, optional count / hint on line 2.
@@ -153,7 +162,7 @@ function render(){
   document.documentElement.lang = lang;
   document.title = t.h1;
   brand($("h1"), t.h1); $("lede1").textContent=typo(t.lede1); $("lede2").textContent=typo(t.lede2);
-  $("tip").textContent=typo(t.tip); brand($("foot"), t.foot); $("legend").textContent=t.legend;
+  $("tip").textContent=typo(t.tip); brand($("foot"), t.foot); brand($("foot-link"), t.footLink); $("legend").textContent=t.legend;
   $("svgt").textContent=t.svg; $("l-slide").textContent=t.slideL; $("l-slide2").textContent=t.slideR; $("nav").setAttribute("aria-label",t.nav);
   document.querySelectorAll(".lang button").forEach(b=>b.setAttribute("aria-pressed", b.dataset.lang===lang));
   // Update the nav in place (never rebuild it) so keyboard focus survives.
