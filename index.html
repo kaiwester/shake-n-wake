@@ -4,16 +4,20 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Shake-n-Wake Vibrationswecker – Tasten erklärt</title>
-<meta name="description" content="Interaktive Kurzanleitung für den kleinen Shake-n-Wake Vibrationswecker mit AAA-Batterie: Uhrzeit, Weckzeit, Stoppuhr, Stundensignal, Licht.">
+<meta name="description" content="Interaktive Kurzanleitung für die kleinen Shake-n-Wake Vibrationswecker mit AAA-Batterie (PI-107 und PI-180SNW): Uhrzeit, Weckzeit, Schlummern, Licht.">
 <meta name="theme-color" content="#ECEAF2" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#1B1926" media="(prefers-color-scheme: dark)">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⏰</text></svg>">
 <link rel="preload" href="fonts/atkinson-hyperlegible-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="css/style.css">
 <script>
-/* Pick the language before first paint: saved choice, else browser language. */
+/* Pick the language before first paint: saved choice, else browser language.
+   Hide the PI-107 markup until rendered when another model will be shown. */
 (function(){var l="de";try{var s=localStorage.getItem("snw-lang");if(s==="de"||s==="en")l=s;else if(!/^de\b/i.test(navigator.language||"de"))l="en"}catch(e){}
-var r=document.documentElement;r.lang=l;if(l!=="de")r.classList.add("pre-render")})();
+var m="",k="";try{k=localStorage.getItem("snw-model")||"";m=/^#180-/.test(location.hash)?"180":/^#./.test(location.hash)?"":k}catch(e){}
+var r=document.documentElement;r.lang=l;if(l!=="de"||m==="180")r.classList.add("pre-render");
+/* Returning visitor (a model was saved on an earlier visit): phones show the picker as one line. */
+if(k)r.classList.add("model-known")})();
 </script>
 <script src="js/app.js" defer></script>
 </head>
@@ -32,7 +36,17 @@ var r=document.documentElement;r.lang=l;if(l!=="de")r.classList.add("pre-render"
 
 <noscript><p class="noscript">Diese Seite benötigt JavaScript. / This page needs JavaScript.</p></noscript>
 
-<main class="grid">
+<main>
+<div class="model" role="group" aria-labelledby="model-q">
+  <p id="model-q">Welcher Wecker? Die Modellnummer steht auf der Rückseite.</p>
+  <span class="model-short" id="model-short" aria-hidden="true">Wecker:</span>
+  <div class="model-opts">
+    <button type="button" data-model="107" aria-pressed="true"><b>PI-107</b> <span id="m107">Tasten Mode und Reset, 1&nbsp;Weckzeit</span></button>
+    <button type="button" data-model="180" aria-pressed="false"><b>PI-180SNW</b> <span id="m180">Tasten Hour, Minute und Snooze, 2&nbsp;Weckzeiten</span></button>
+  </div>
+</div>
+
+<div class="grid">
 
   <div class="device">
     <svg viewBox="0 44 380 290" role="img" aria-labelledby="svgt">
@@ -46,14 +60,16 @@ var r=document.documentElement;r.lang=l;if(l!=="de")r.classList.add("pre-render"
       <rect id="lcd" class="lcdbg" x="112" y="110" width="156" height="96" rx="6" stroke="var(--plastic-edge)" stroke-width="1.5"/>
       <text id="lcd-top" class="lcdtxt" x="190" y="131" text-anchor="middle" font-size="11.5"></text>
       <path id="lcd-bell" class="lcdicon" d="M124 136v-5a5 5 0 0 1 10 0v5l1.5 2h-13zM127.5 140h3" style="visibility:hidden"/>
+      <text id="lcd-am" class="lcdtxt" x="122" y="158" font-size="11"></text>
       <text id="lcd-main" class="lcdtxt" x="190" y="179" text-anchor="middle" font-size="38"></text>
       <text id="lcd-sub" class="lcdtxt" x="190" y="198" text-anchor="middle" font-size="13"></text>
-      <text id="l-set1" class="klabel" x="82" y="84">Reset</text>
-      <text id="l-set2" class="klabel" x="82" y="101">Time Set</text>
+      <text id="l-set1" class="klabel" x="82" y="84"></text>
+      <text id="l-set2" class="klabel" x="82" y="101"></text>
+      <text id="l-light2" class="klabel" x="102" y="224"></text>
       <g id="l-light" class="kicon"><path d="M86 223c-5-3.5-4.5-14 3-14s8 10.5 3 14z"/><path d="M86.5 227h5M87.5 230.5h3"/></g>
-      <text id="l-adj1" class="klabel" x="298" y="84" text-anchor="end">Start/Stop</text>
-      <text id="l-adj2" class="klabel" x="298" y="101" text-anchor="end">Adjust</text>
-      <text id="l-mode" class="klabel" x="298" y="224" text-anchor="end">Mode</text>
+      <text id="l-adj1" class="klabel" x="298" y="84" text-anchor="end"></text>
+      <text id="l-adj2" class="klabel" x="298" y="101" text-anchor="end"></text>
+      <text id="l-mode" class="klabel" x="298" y="224" text-anchor="end"></text>
       <text id="l-slide" class="klabel" x="180" y="274" text-anchor="end"></text>
       <text id="l-slide2" class="klabel" x="200" y="274"></text>
       <g id="b-set" class="badge" data-mid="101"><rect x="2" y="86" width="52" height="30" rx="15" fill="var(--orange)"/><text x="28" text-anchor="middle" font-size="16" font-weight="700" fill="var(--orange-ink)"></text><text x="28" text-anchor="middle" font-size="12" font-weight="700" fill="var(--orange-ink)"></text></g>
@@ -74,10 +90,11 @@ var r=document.documentElement;r.lang=l;if(l!=="de")r.classList.add("pre-render"
     </section>
     <div class="tip"><p id="tip"></p></div>
   </div>
+</div>
 </main>
 <p class="sr-only" id="announce" aria-live="polite"></p>
 
-<footer><p><span id="foot"></span> <a id="foot-link" href="https://manuals.plus/tech-tools/tech-tools-pi-107-silent-vibrating-alarm-clock-instruction-manual" rel="noopener">Original-Anleitung des Tech Tools Shake-n-Wake (Modell PI-107)</a>.</p></footer>
+<footer><p><span id="foot"></span> <a id="foot-link" href="https://cdn.commercev3.net/www.maxiaids.com/downloads/media/904107.pdf" rel="noopener">Original-Anleitung des Shake-n-Wake PI-107 (PDF)</a>.</p></footer>
 </div>
 
 </body>
