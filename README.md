@@ -1,11 +1,11 @@
 # Shake-n-Wake – What Does Each Button Do?
 
-Interactive quick guide (DE/EN) for the small Shake-n-Wake vibrating alarm clock (Model PI-107, one AAA battery).
+Interactive quick guide (DE/EN) for the small Shake-n-Wake vibrating alarm clocks with one AAA battery: Model PI-107 (one alarm) and Model PI-180SNW (two alarms).
 Select a function—the buttons you need to press will be highlighted on the device, along with the order.
 
 **Live:** https://kaiwester.github.io/shake-n-wake/
 
-Unofficial; not from the manufacturer. Based on the [Tech Tools PI-107 instruction manual](https://manuals.plus/tech-tools/tech-tools-pi-107-silent-vibrating-alarm-clock-instruction-manual).
+Unofficial; not from the manufacturer. Based on the original instruction sheets for the [PI-107](https://cdn.commercev3.net/www.maxiaids.com/downloads/media/904107.pdf) and the [PI-180SNW](https://m.media-amazon.com/images/I/B1+FXrp5rAS.pdf).
 
 
 ## Run locally
@@ -18,7 +18,7 @@ python3 -m http.server 8000
 ## Contributing
 
 Found a wrong step or a button that does something else on your clock? Open an issue or a pull request.
-All texts and button mappings live in `js/app.js` (`T` for the DE/EN texts, `KEYS` for which buttons light up).
+All texts and button mappings live in `js/app.js` (`T` for the DE/EN texts, `MODELS` for each clock's button labels, which buttons light up and the display mock-up).
 
 ## License
 

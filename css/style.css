@@ -25,19 +25,31 @@
 html{height:100%}
 .nobr{white-space:nowrap}
 ::selection{background:var(--orange-soft);color:var(--ink)}
-body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.6 "Atkinson Hyperlegible",system-ui,-apple-system,"Segoe UI",sans-serif}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.6 "Atkinson Hyperlegible",system-ui,-apple-system,"Segoe UI",sans-serif;text-wrap:pretty}
+h1,h2{text-wrap:balance}
 .wrap{max-width:1040px;margin:0 auto;padding:28px 20px 48px}
 header{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;margin-bottom:24px}
 h1{font-size:clamp(28px,5vw,42px);line-height:1.1;margin:0 0 8px;font-weight:700;letter-spacing:-.01em}
 .lede{margin:0;color:var(--muted);max-width:56ch}
-.lang{display:flex;border:1.5px solid var(--line);border-radius:999px;overflow:hidden;flex-shrink:0}
-.lang button{font:inherit;font-size:14px;background:none;border:0;color:var(--muted);padding:6px 12px;cursor:pointer}
+.lang{display:flex;border:1.5px solid var(--line);border-radius:999px;flex-shrink:0}
+.lang button{font:inherit;font-size:14px;background:none;border:0;border-radius:999px;color:var(--muted);padding:6px 12px;cursor:pointer}
 .lang button:hover{color:var(--ink)}
 .lang button[aria-pressed="true"]{background:var(--ink);color:var(--bg)}
+.model{margin:0 0 24px}
+.model p{margin:0 0 8px;font-size:14px;font-weight:700;color:var(--muted)}
+.model-opts{display:flex;flex-wrap:wrap;gap:8px}
+.model button{font:inherit;font-size:15px;line-height:1.35;text-align:left;color:var(--ink);background:var(--plastic);border:1.5px solid var(--line);border-radius:12px;padding:8px 14px;cursor:pointer;-webkit-tap-highlight-color:transparent}
+.model button b{display:block}
+.model button span{color:var(--muted);font-size:14px}
+.model button:hover{border-color:var(--muted)}
+.model button:active:not([aria-pressed="true"]){background:var(--key)}
+.model button[aria-pressed="true"]{border-color:var(--ink);box-shadow:inset 0 0 0 1px var(--ink)}
+.model-short{display:none;font-size:14px;font-weight:700;color:var(--muted)}
 .grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:32px;align-items:start}
 .device{position:sticky;top:calc(16px + env(safe-area-inset-top,0px))}
 svg{width:100%;height:auto;display:block;max-width:440px;margin:0 auto}
-.key{fill:var(--key);stroke:var(--plastic-edge);stroke-width:1.5;transition:fill .2s}
+/* Key outline in --muted: the buttons must read as buttons (≥3:1) before they light up */
+.key{fill:var(--key);stroke:var(--muted);stroke-width:1.5;transition:fill .2s}
 .key.hl{fill:var(--orange);stroke:var(--orange-ink)}
 .klabel{font-family:"Atkinson Hyperlegible",sans-serif;font-size:14px;fill:var(--muted)}
 .kicon{fill:none;stroke:var(--muted);stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
@@ -60,13 +72,18 @@ nav a{-webkit-tap-highlight-color:transparent}
 nav a:hover{border-color:var(--muted)}
 nav a:active:not([aria-current]){background:var(--key)}
 nav a[aria-current="page"]{background:var(--orange);border-color:var(--orange);color:var(--orange-ink);font-weight:700}
-a:focus-visible,button:focus-visible{outline:3px solid var(--orange);outline-offset:2px}
+/* Two-tone focus ring: orange next to the control, an ink ring outside it so it
+   stays visible (≥3:1) on the light page, the white panels and orange pills. */
+a:focus-visible,button:focus-visible{outline:2px solid var(--ink);outline-offset:3px;box-shadow:0 0 0 3px var(--orange)}
+.model button[aria-pressed="true"]:focus-visible{box-shadow:inset 0 0 0 1px var(--ink),0 0 0 3px var(--orange)}
 .panel{background:var(--plastic);border:1.5px solid var(--line);border-radius:14px;padding:20px 22px}
 .panel h2{margin:0 0 12px;font-size:22px;line-height:1.25}
 ol{margin:0;padding:0;list-style:none;counter-reset:s}
 ol li{counter-increment:s;position:relative;padding:0 0 12px 40px}
 ol li::before{content:counter(s);position:absolute;left:0;top:0;width:28px;height:28px;border-radius:50%;background:var(--orange);color:var(--orange-ink);font-weight:700;font-size:15px;display:flex;align-items:center;justify-content:center}
 ol.plain li::before{content:"•";background:none;color:var(--muted);font-size:22px;top:-4px}
+ol a{color:inherit;font-weight:700;text-decoration-thickness:1.5px;text-underline-offset:3px}
+ol a:hover{text-decoration-color:var(--orange)}
 .note{margin:4px 0 0;font-size:15px;color:var(--muted)}
 .tip{margin-top:16px;padding:14px 22px;border:1.5px solid color-mix(in srgb,var(--orange) 40%,transparent);background:var(--orange-soft);border-radius:14px}
 .tip p{margin:0;font-size:15px}
@@ -79,6 +96,7 @@ footer a:hover{color:var(--ink)}
 @media (pointer:coarse){
   nav a{min-height:44px;display:inline-flex;align-items:center;padding:0 16px}
   .lang button{min-height:44px;padding:0 16px}
+  .model-known .model button{min-height:44px}
 }
 
 /* Phones: drawing, function strip and steps in one view */
@@ -92,7 +110,31 @@ footer a:hover{color:var(--ink)}
   h1{margin-bottom:6px;font-size:clamp(22px,6.6vw,26px)}
   .lede{font-size:15px;line-height:1.45}
   .lede-intro{display:none}
+  .model{margin-bottom:12px}
+  .model-opts{flex-wrap:nowrap}
+  .model button{flex:1 1 0;min-width:0;padding:6px 10px}
+  .model button span{font-size:13px}
+  /* Returning visitors (model saved on an earlier visit): the picker shrinks to one
+     line of model names, so the function strip and steps move up. */
+  .model-known .model{display:flex;align-items:center;gap:10px}
+  .model-known .model p,.model-known .model button span{display:none}
+  .model-known .model-short{display:block}
+  .model-known .model button{flex:0 0 auto;padding:6px 14px}
+  /* They have seen how the guide works: drop the intro too. */
+  .model-known .lede{display:none}
   .grid{grid-template-columns:minmax(0,1fr);gap:12px}
+  /* The drawing renders at 75–90 % of its drawn size on phones: enlarge the
+     button names and the display's small rows so they stay readable
+     (labels ≈13–16 px, display rows ≈10–12 px on screen). */
+  .klabel{font-size:18px}
+  #l-set1,#l-adj1{transform:translateY(-3px)}
+  #lcd-top{font-size:13px}
+  #lcd-sub{font-size:15px}
+  #lcd-am{font-size:12px}
+  /* Badge second line (press count, "or", "hold", "3 s"): 12 → 15 units,
+     ≈12–13 px on screen instead of 8–9 px. */
+  .badge text+text{font-size:15px}
+  /* The 32px fade at the right end is mirrored as STRIP_FADE in app.js */
   nav{display:flex;gap:20px;overflow-x:auto;overscroll-behavior-x:contain;margin:0 -16px 16px;padding:6px 16px 10px;scroll-padding-inline:16px;scrollbar-width:none;
     -webkit-mask-image:linear-gradient(to right,transparent,#000 16px,#000 calc(100% - 32px),transparent);
             mask-image:linear-gradient(to right,transparent,#000 16px,#000 calc(100% - 32px),transparent)}
